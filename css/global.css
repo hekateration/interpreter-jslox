@@ -1,0 +1,220 @@
+*:before, *, *:after
+{
+  box-sizing: border-box;
+}
+
+:root
+{
+  --text-primary: #2b3039;
+  --text-secondary: #6c5d5d;
+  --text-tertiary: #8a8383;
+  --text-regular: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --text-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html
+{
+  height: 100%;
+}
+
+body
+{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--text-regular);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+h1, h2
+{
+  font-weight: 400;
+}
+
+h1, h2, p, pre
+{
+  margin-top: 0;
+}
+
+.main-menu
+{
+  display: flex;
+  align-items: flex-start;
+}
+.main-menu .hr
+{
+  flex: 1;
+  margin-top: 50px;
+  border-bottom: 1px dashed #333;
+}
+.menu-item .top
+{
+  border: 1px dashed #333;
+  border-top: none;
+  line-height: 50px;
+  text-align: center;
+}
+.menu-item.first .top
+{
+  padding: 0 24px;
+  border-right: none;
+}
+.menu-item .top:not(.selected)
+{
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='32' height='32' patternTransform='scale(1) rotate(65)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(240,16.7%,97.6%,1)'/><path d='M37.657 10.343l-4.243 4.243m-2.828 2.828l-4.243 4.243m11.314 0l-4.243-4.243m-2.828-2.828l-4.243-4.243m-20.686 0l-4.243 4.243m-2.828 2.828l-4.243 4.243m11.314 0l-4.243-4.243m-2.828-2.828l-4.243-4.243'  stroke-linecap='square' stroke-width='3' stroke='hsla(0,0%,68.6%,1)' fill='none'/><path d='M16-8v6m0 4v6m8-8h-6m-4 0H8m8 24v6m0 4v6m8-8h-6m-4 0H8'  stroke-linecap='square' stroke-width='3' stroke='hsla(228,12.5%,84.3%,1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+}
+.menu-item .top a
+{
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  color: var(--text-primary);
+}
+.menu-item .top a:before
+{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  left: 0;
+  border-bottom: 1px solid #333;
+  opacity: 0;
+}
+.menu-item .top a:hover:before
+{
+  opacity: 1;
+}
+.menu-item .top a:after
+{
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: -6px;
+  bottom: 9px;
+  left: -6px;
+  z-index: -1;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.menu-item .top.selected a
+{
+  text-decoration: none;
+  pointer-events: none;
+}
+.menu-item .bot
+{
+  display: flex;
+  align-items: center;
+  height: 90px;
+  padding: 0 12px;
+  border-left: 1px dashed #333;
+  border-right: 1px dashed #333;
+  font-family: var(--text-monospace);
+  font-size: 16px;
+}
+.menu-item .bot .text
+{
+  line-height: 1;
+}
+.menu-item .bot > .img
+{
+  height: 30px;
+  margin: 0 6px;
+}
+.menu-item .bot .node
+{
+  display: flex;
+  height: 54px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  text-align: center;
+  overflow: hidden;
+}
+.menu-item .bot .node.one
+{
+  width: 114px;
+}
+.menu-item .bot .node .a, .menu-item .bot .node .c
+{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-transform: uppercase;
+  font-size: 12px;
+  background-color: #b7e3ba;
+}
+.menu-item .bot .node .b
+{
+  padding: 0 6px;
+  line-height: 52px;
+}
+
+.content
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.content > .title
+{
+  margin: 154px 0 0 120px;
+}
+.content > .title h1
+{
+  font-size: 60px;
+}
+.content > .title p
+{
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  font-size: 30px;
+}
+
+.syntax
+{
+  width: 330px;
+}
+.syntax > h2
+{
+  margin-left: 42px;
+}
+.syntax .chapter:nth-child(1)
+{
+  height: 302px;
+  padding: 0 12px 0 0;
+  border-bottom: 1px dashed var(--text-secondary);
+  color: var(--text-secondary);
+  line-height: 301px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.syntax .features
+{
+  padding: 6px 12px;
+  border: 1px dashed var(--text-secondary);
+  background-color: rgba(250, 248, 248, .72);
+}
+.syntax .features .title:not(:first-child)
+{
+  margin-top: 12px;
+}
+.syntax .features .feature span:nth-child(odd)
+{
+  color: #7f459b;
+}
+.syntax .features .feature span:nth-child(even)
+{
+  color: #1c684f;
+}
+
+.flex
+{
+  display: flex;
+}
+
+.text-muted
+{
+  color: var(--text-tertiary);
+}
