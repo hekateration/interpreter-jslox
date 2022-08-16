@@ -156,6 +156,7 @@ h1, h2, p, pre
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  padding: 0 24px;
 }
 .content > .title
 {
@@ -174,11 +175,7 @@ h1, h2, p, pre
 
 .syntax
 {
-  width: 330px;
-}
-.syntax > h2
-{
-  margin-left: 42px;
+  width: 360px;
 }
 .syntax .chapter:nth-child(1)
 {
@@ -192,21 +189,29 @@ h1, h2, p, pre
 }
 .syntax .features
 {
-  padding: 6px 12px;
-  border: 1px dashed var(--text-secondary);
-  background-color: rgba(250, 248, 248, .72);
+  padding-right: 12px;
+  border-right: 1px solid var(--text-secondary);
 }
 .syntax .features .title:not(:first-child)
 {
   margin-top: 12px;
 }
-.syntax .features .feature span:nth-child(odd)
+.syntax .features .feature span:not(.label):nth-child(odd)
 {
   color: #7f459b;
 }
-.syntax .features .feature span:nth-child(even)
+.syntax .features .feature span:not(.label):nth-child(even)
 {
   color: #1c684f;
+}
+.syntax .features .feature span.label
+{
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background-color: rgba(239, 169, 239,.48);
+  padding: 2px 4px;
+  border-radius: 6px;
 }
 
 .flex
