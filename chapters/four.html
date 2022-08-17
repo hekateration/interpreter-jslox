@@ -33,9 +33,105 @@
   <div class="hr"></div>
 </div>
 
-<!-- todo content: input field, output field - tokens -->
+<div class="content">
+  <div class="syntax">
+    <h2>JSlox syntax</h2>
+    <div class="features">
+      <div class="title">Data Types</div>
+      <div class="feature">
+        <span>"string"</span>,
+        <span>1234 12.34</span>,
+        <span>nil</span>
+      </div>
+
+      <div class="title">Arithmetic Operators</div>
+      <div class="feature">
+        <span class="label">binary</span>
+        <span>+</span>
+        <span>-</span>
+        <span>*</span>
+        <span>/</span> <br>
+        <span class="label">unary</span>
+        <span>-</span>
+      </div>
+
+      <div class="title">Comparison and Equality Operators</div>
+      <div class="feature">
+        <span>&lt;</span>
+        <span>&lt;=</span>
+        <span>&gt;</span>
+        <span>&gt;=</span>
+        <span>==</span>
+        <span>!=</span>
+      </div>
+
+      <div class="title">Logical Operators</div>
+      <div class="feature">
+        <span class="label">binary</span>
+        <span>and</span>
+        <span>or</span> <br>
+        <span class="label">unary</span>
+        <span>!</span>
+      </div>
+
+      <div class="title">Grouping Operators</div>
+      <div class="feature">
+        <span class="label">expression</span>
+        <span>(</span>
+        <span>)</span> <br>
+        <span class="label">block</span>
+        <span>{</span>
+        <span>}</span>
+      </div>
+
+      <div class="title">Statement Operator</div>
+      <div class="feature">
+        <span>;</span>
+      </div>
+
+      <div class="title">Keywords</div>
+      <div class="feature">
+        <span>and</span>
+        <span>class</span>
+        <span>else</span>
+        <span>false</span>
+        <span>for</span>
+        <span>fun</span>
+        <span>if</span>
+        <span>nil</span>
+        <span>or</span>
+        <span>print</span>
+        <span>return</span>
+        <span>super</span>
+        <span>this</span>
+        <span>true</span>
+        <span>var</span>
+        <span>while</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="input">
+    <h2>Input</h2>
+    <div class="domain-source-code">
+      <textarea id="source-code" cols="40" rows="30" placeholder="Type your code in here...
+
+...3 seconds after the last keystroke it will be interpreted."></textarea>
+
+      <div class="title">Time to output</div>
+      <div class="timer"><div id="progress-bar" class="bar"></div></div>
+    </div>
+  </div>
+
+  <div class="output">
+    <h2>Output</h2>
+    <div id="out"></div>
+  </div>
+</div>
 
 <div class="footer">© <span class="text-muted">github.com/</span>hekateration</div>
+
+<script src="../js/io.js"></script>
 
 <svg height="0" width="0" display="none">
   <symbol id="icon-arrow-right" viewBox="0 0 458.144 458.144">

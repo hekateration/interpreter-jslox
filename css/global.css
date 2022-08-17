@@ -7,7 +7,7 @@
 {
   --text-primary: #2b3039;
   --text-secondary: #6a2d2d;
-  --text-tertiary: #8a8383;
+  --text-tertiary: #807373;
   --text-regular: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --text-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
@@ -85,12 +85,15 @@ h1, h2, p, pre
   right: 0;
   bottom: 12px;
   left: 0;
-  border-bottom: 1px solid #333;
+  height: 1px;
+  background-color: #333;
   opacity: 0;
+  transition: height .3s ease;
 }
 .menu-item .top a:hover:before
 {
   opacity: 1;
+  height: 3px;
 }
 .menu-item .top a:after
 {
@@ -180,7 +183,12 @@ h1, h2, p, pre
 
 .syntax
 {
-  width: 360px;
+  width: 300px;
+}
+.input, .output
+{
+  width: 430px;
+  padding: 0 12px;
 }
 .syntax .chapter:nth-child(1)
 {
@@ -237,4 +245,56 @@ h1, h2, p, pre
   color: var(--text-secondary);
   font-size: 16px;
   text-align: center;
+}
+
+.input #source-code
+{
+  position: relative;
+  background-color: #f3edda;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+}
+.input .domain-source-code
+{
+  position: relative;
+}
+.input .domain-source-code:after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid #333;
+}
+.input .timer
+{
+  position: relative;
+  height: 6px;
+  margin-right: 15px;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+.input .timer .bar
+{
+  height: 4px;
+  background-color: #b7e3ba;
+  transform: translate3d(-100%, 0, 0);
+}
+.input .timer .bar.animate
+{
+  animation: progress-bar 2.9s linear forwards;
+}
+@keyframes progress-bar
+{
+  to { transform: translate3d(0, 0, 0); }
+}
+.input .title
+{
+  margin-top: 6px;
+  color: var(--text-tertiary);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
