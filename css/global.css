@@ -5,7 +5,7 @@
 
 :root
 {
-  --text-primary: #2b3039;
+  --text-primary: #282e35;
   --text-secondary: #6a2d2d;
   --text-tertiary: #807373;
   --text-regular: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -284,7 +284,7 @@ h1, h2, p, pre
 }
 .input .timer .bar.animate
 {
-  animation: progress-bar 2.9s linear forwards;
+  animation: progress-bar .9s linear forwards;
 }
 @keyframes progress-bar
 {
@@ -297,4 +297,15 @@ h1, h2, p, pre
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.output #output-lines
+{
+  position: relative;
+  height: 578px;
+  overflow: scroll;
+}
+.output #output-lines div:nth-child(odd)
+{
+  background-color: #edf9f6;
 }
