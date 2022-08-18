@@ -116,7 +116,7 @@
     <div class="domain-source-code">
       <textarea id="source-code" cols="40" rows="30" placeholder="Type your code in here...
 
-...3 seconds after the last keystroke it will be interpreted."></textarea>
+...1 second after the last keystroke it will be interpreted."></textarea>
 
       <div class="title">Time to output</div>
       <div class="timer"><div id="progress-bar" class="bar"></div></div>
@@ -125,13 +125,17 @@
 
   <div class="output">
     <h2>Output</h2>
-    <div id="out"></div>
+    <div id="output-lines"></div>
   </div>
 </div>
 
 <div class="footer">© <span class="text-muted">github.com/</span>hekateration</div>
 
 <script src="../js/io.js"></script>
+<script src="../js/chapter-04/token-type.js"></script>
+<script src="../js/chapter-04/token.js"></script>
+<script src="../js/chapter-04/scanner.js"></script>
+<script src="../js/chapter-04/lox.js"></script>
 
 <svg height="0" width="0" display="none">
   <symbol id="icon-arrow-right" viewBox="0 0 458.144 458.144">

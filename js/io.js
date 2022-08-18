@@ -1,13 +1,13 @@
 const viewSourceCode = document.getElementById('source-code');
 const viewProgressBar = document.getElementById('progress-bar');
-const viewOutput = document.getElementById('out');
+const viewOutputLines = document.getElementById('output-lines');
 
 let tLastKeyPressed = null;
 let tProgressBar = null;
 viewSourceCode.addEventListener('keyup', () =>
 {
   clearTimeout(tLastKeyPressed);
-  tLastKeyPressed = setTimeout(interpretSourceCode, 2900);
+  tLastKeyPressed = setTimeout(interpretSourceCode, 1000);
 
   clearTimeout(tProgressBar);
   viewProgressBar.classList.remove('animate');
@@ -19,5 +19,13 @@ viewSourceCode.addEventListener('keyup', () =>
 
 function interpretSourceCode()
 {
-  viewOutput.innerHTML = viewSourceCode.value;
+  // Clear output from the last run
+  viewOutputLines.innerHTML = '';
+
+  Lox.run(viewSourceCode.value);
+}
+
+function printLine(line)
+{
+  viewOutputLines.insertAdjacentHTML('beforeend', `<div>${line}</div>`);
 }
